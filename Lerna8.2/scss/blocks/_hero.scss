@@ -1,0 +1,97 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: $color-white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: calc(740 / 1728 * 100vw);
+    max-height: 740px;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 69%, rgba(0, 0, 0, 1) 100%);
+
+    @include vp-1023 {
+      height: calc(460 / 768 * 100vw);
+      max-height: 460px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    img {
+      width: 100%;
+      height: calc(740 / 1728 * 100vw);
+      max-height: 740px;
+      min-height: 460px;
+      object-fit: cover;
+
+      @include vp-1023 {
+        height: calc(460 / 768 * 100vw);
+        max-height: 460px;
+      }
+
+      @include vp-767 {
+        height: calc(300 / 375 * 100vw);
+        max-height: 300px;
+        min-height: 260px;
+      }
+    }
+  }
+
+  &__container {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 100%;
+    pointer-events: none;
+    z-index: 2;
+
+    @include vp-1023 {
+      bottom: 28px;
+    }
+
+    @include vp-767 {
+      position: static;
+      transform: none;
+      padding: 20px 20px 0;
+    }
+  }
+
+  &__title {
+    font-family: $ff-tenor;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+
+    @media (max-width: 1280px) {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    @include vp-1023 {
+      font-size: 40px;
+      line-height: 46px;
+      max-width: 520px;
+    }
+
+    @include vp-767 {
+      font-size: 28px;
+      line-height: 36px;
+      max-width: 335px;
+    }
+  }
+}

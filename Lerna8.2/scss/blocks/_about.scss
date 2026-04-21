@@ -1,0 +1,249 @@
+.about {
+  padding: 120px 0 0;
+  color: $color-white;
+
+  @include vp-1023 {
+    padding: 80px 0 0;
+  }
+
+  @include vp-767 {
+    padding: 60px 0 0;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+    max-width: 1368px;
+    margin: 0 auto;
+    padding: 0;
+
+    @include vp-1023 {
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 532px;
+      padding: 0;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+      max-width: 335px;
+      gap: 0;
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: stretch;
+
+    &--side {
+      @include vp-1023 {
+        &:last-child {
+          display: none;
+        }
+      }
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    &--center {
+      justify-content: center;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    aspect-ratio: 456 / 600;
+    overflow: hidden;
+    position: relative;
+
+    @include vp-1023 {
+      aspect-ratio: 266 / 350;
+    }
+
+    @include vp-767 {
+      aspect-ratio: 335 / 440;
+    }
+
+    picture,
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    &--left,
+    &--right {
+      border-radius: 0 0 600px 600px;
+    }
+  }
+
+  &__arch {
+    width: 100%;
+    aspect-ratio: 456 / 600;
+    border: 1px solid $color-fallow;
+    border-bottom: none;
+    border-radius: 600px 600px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 92px 30px 30px;
+    text-align: center;
+
+    @include vp-1023 {
+      aspect-ratio: 266 / 350;
+      padding: 39px 20px 20px;
+    }
+
+    @include vp-767 {
+      aspect-ratio: 335 / 440;
+      padding: 55px 20px 30px;
+    }
+  }
+
+  &__logo {
+    width: 110px;
+    height: 146px;
+    color: $color-fallow;
+    margin: 0 0 30px;
+    flex-shrink: 0;
+
+    @include vp-1023 {
+      width: 70px;
+      height: 94px;
+      margin: 0 0 20px;
+    }
+
+    @include vp-767 {
+      width: 60px;
+      height: 80px;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__caption {
+    font-family: $ff-roboto;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-fallow;
+    margin: 0 0 10px;
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 20px;
+      margin: 0 0 5px;
+    }
+
+    @include vp-767 {
+      font-size: 10px;
+      line-height: 14px;
+      margin: 0 0 10px;
+    }
+  }
+
+  &__title {
+    font-family: $ff-tenor;
+    font-size: 44px;
+    line-height: 50px;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    color: $color-white;
+    margin: 0 0 40px;
+
+    @include vp-1023 {
+      font-size: 28px;
+      line-height: 32px;
+      margin: 0 0 20px;
+    }
+
+    @include vp-767 {
+      font-size: 24px;
+      line-height: 28px;
+      margin: 0 0 18px;
+    }
+  }
+
+  &__address {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: $ff-roboto;
+    font-size: 18px;
+    line-height: 26px;
+    color: $color-white;
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__pin {
+    width: 24px;
+    height: 24px;
+    color: $color-fallow;
+    flex-shrink: 0;
+
+    @include vp-1023 {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__container--tagline {
+    display: block;
+    margin-top: 120px;
+
+    @include vp-1023 {
+      margin-top: 80px;
+    }
+
+    @include vp-767 {
+      margin-top: 60px;
+    }
+  }
+
+  &__tagline {
+    font-family: $ff-tenor;
+    font-size: 34px;
+    line-height: 44px;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-fallow;
+    margin: 0 auto;
+    max-width: 1368px;
+
+    @include vp-1023 {
+      font-size: 24px;
+      line-height: 30px;
+      max-width: 728px;
+    }
+
+    @include vp-767 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__tagline-br--tablet {
+    display: none;
+
+    @include vp-1023 {
+      display: block;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+}

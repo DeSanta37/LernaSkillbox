@@ -1,0 +1,47 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  height: 60px;
+  padding: 17px 42px;
+  border: 1px solid $color-fallow;
+  border-radius: 0 40px 0 40px;
+  background-color: transparent;
+  color: $color-fallow;
+  font-family: $ff-roboto;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+  @include vp-1023 {
+    min-width: 180px;
+    height: 50px;
+    padding: 15px 36px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &:hover {
+    background-color: $color-fallow;
+    color: $color-rustic-red;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-ecru-white;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    background-color: $color-ecru-white;
+    border-color: $color-ecru-white;
+    color: $color-rustic-red;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}
