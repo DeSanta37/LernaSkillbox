@@ -1,0 +1,45 @@
+.burger {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  $root: &;
+
+  &__icon {
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    transition-property: opacity, transform;
+    transition-duration: $transition-duration;
+    transition-timing-function: $transition-timing-function;
+
+    &--open {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    &--close {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.85);
+    }
+  }
+
+  .header--open & {
+    #{$root}__icon--open {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.85);
+    }
+
+    #{$root}__icon--close {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+  }
+}

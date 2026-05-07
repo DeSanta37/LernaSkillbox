@@ -1,0 +1,221 @@
+@mixin menu-text-fill {
+  background-image: linear-gradient(90deg, $color-black 0%, $color-black 50%, $color-black-35 50%, $color-black-35 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $color-white-smoke;
+  z-index: -1;
+  flex-direction: column;
+  padding: 140px 80px 40px 390px;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition-property: opacity, visibility;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+  $root: &;
+
+  @media (max-width: 1300px) {
+    padding: 140px 80px 40px 80px;
+  }
+
+  .header--open & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0 0 40px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+    opacity: 1;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    min-height: 80px;
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+
+    @media (max-width: 1400px) {
+      font-size: 70px;
+      line-height: 70px;
+      min-height: 70px;
+    }
+
+    @media (max-width: 1300px) {
+      font-size: 60px;
+      line-height: 60px;
+      min-height: 60px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      #{$root}__link-icon {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-60px, -50%);
+        transition-property: opacity, visibility, transform;
+        transition-duration: $transition-duration, 0s, $transition-duration;
+        transition-timing-function: $transition-timing-function, $transition-timing-function, $transition-timing-function;
+        transition-delay: $menu-hover-icon-delay, 0s, $menu-hover-icon-delay;
+      }
+
+      #{$root}__link-text {
+        background-position: 0 0;
+        transition-property: clip-path, background-position;
+        transition-duration: $transition-duration-menu, calc(var(--main-chars, 7) * #{$menu-reveal-speed});
+        transition-timing-function: $transition-timing-function-menu, linear;
+        transition-delay: 0s, $menu-hover-text-delay;
+      }
+
+      #{$root}__shadow-word:nth-child(1) {
+        clip-path: inset(0 0 0 0);
+        transition-delay: calc(#{$menu-hover-text-delay} + var(--main-chars, 7) * #{$menu-reveal-speed});
+      }
+
+      #{$root}__shadow-word:nth-child(2) {
+        clip-path: inset(0 0 0 0);
+        transition-delay: calc(#{$menu-hover-text-delay} + (var(--main-chars, 7) + 1) * #{$menu-reveal-speed});
+      }
+    }
+  }
+
+  &__link-label {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+  }
+
+  &__link-text {
+    display: inline-block;
+    clip-path: inset(0 100% 0 0);
+    @include menu-text-fill;
+    transition-property: clip-path, background-position;
+    transition-duration: calc(var(--main-chars, 7) * #{$menu-reveal-speed}), calc(var(--main-chars, 7) * #{$menu-reveal-speed});
+    transition-timing-function: linear, linear;
+    transition-delay: 0s, calc((1 + var(--second-chars, 4)) * #{$menu-reveal-speed});
+  }
+
+  &__link-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-70px, -50%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition-property: opacity, visibility, transform;
+    transition-duration: $transition-duration, 0s, $transition-duration;
+    transition-timing-function: $transition-timing-function, $transition-timing-function, $transition-timing-function;
+    transition-delay: 0s, 0s, 0s;
+  }
+
+  &__shadow-extra {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+  }
+
+  &__shadow-word {
+    display: inline-block;
+    color: $color-black;
+    clip-path: inset(0 100% 0 0);
+    transition-property: clip-path;
+    transition-duration: calc(var(--chars, 1) * #{$menu-reveal-speed});
+    transition-timing-function: linear;
+
+    &:nth-child(1) {
+      margin-left: 0.22em;
+      transition-delay: calc(var(--second-chars, 4) * #{$menu-reveal-speed});
+    }
+
+    &:nth-child(2) {
+      margin-left: 0.22em;
+      transition-delay: 0s;
+    }
+  }
+
+  &__bottom {
+    margin: auto 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(20px);
+    transition-property: opacity, transform;
+    transition-duration: $transition-duration-menu;
+    transition-timing-function: $transition-timing-function-menu;
+    transition-delay: 0s;
+
+    .header--open & {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: #{$menu-item-stagger-start + 5 * $menu-item-stagger-step};
+    }
+  }
+
+  &__language-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__language-link {
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-black;
+    font-weight: 500;
+    transition-property: color;
+    transition-duration: $transition-duration;
+    transition-timing-function: $transition-timing-function;
+
+    &--active {
+      color: $color-dark-gray;
+    }
+  }
+
+  &__partner {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: $color-black;
+  }
+}
+
+@at-root {
+  @for $i from 1 through 5 {
+    .header--open .main-nav__item:nth-child(#{$i}) .main-nav__link-text {
+      clip-path: inset(0 0 0 0);
+      transition-delay: #{$menu-item-stagger-start + ($i - 1) * $menu-item-stagger-step}, 0s;
+    }
+
+    .main-nav__item:nth-child(#{$i}) .main-nav__link-text {
+      transition-delay: #{$menu-item-stagger-start + (5 - $i) * $menu-item-stagger-step}, 0s;
+    }
+  }
+}

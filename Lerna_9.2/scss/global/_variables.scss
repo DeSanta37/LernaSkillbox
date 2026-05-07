@@ -1,0 +1,36 @@
+// Colors
+
+$color-white: #ffffff;
+$color-black: #000000;
+$color-royal-blue: #3C52E6;
+$color-white-smoke: #F5F5F5;
+$color-dark-gray: #ACACAC;
+
+$color-black-20: rgba($color-black, 0.2);
+$color-black-35: rgba($color-black, 0.35);
+$color-royal-blue-90: rgba($color-royal-blue, 0.9);
+
+// Typography
+$ff-norms: "TTNormsPro", "Arial", sans-serif;
+
+// Viewport
+$vp-tablet: 1023px;
+$vp-mobile: 767px;
+
+// Animation
+$transition-duration: 0.4s;
+$transition-timing-function: ease-in-out;
+$transition-300: $transition-timing-function $transition-duration;
+
+$transition-duration-menu: 0.5s;
+$transition-timing-function-menu: ease-in-out;
+
+$contacts-photo-duration: 30s;
+$contacts-photo-timing-function: ease-in-out;
+
+$menu-item-stagger-start: 0.15s;
+$menu-item-stagger-step: 0.12s;
+
+$menu-hover-icon-delay: 0s;
+$menu-hover-text-delay: 0.05s;
+$menu-reveal-speed: 0.085s;
