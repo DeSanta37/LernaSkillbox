@@ -1,0 +1,296 @@
+.burger-menu {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  display: none;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  color: $color-white;
+  background-color: $color-blue-charcoa;
+
+  @include vp-767 {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .header--menu-open & {
+    display: block;
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    max-width: 1728px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 180px clamp(20px, 10.42vw, 180px) 100px;
+    padding-left: calc(clamp(20px, 10.42vw, 180px) + 69px);
+    box-sizing: border-box;
+
+    @include vp-1023 {
+      padding: 80px clamp(20px, 2.89vw, 50px) 80px;
+      padding-left: clamp(20px, 2.89vw, 50px);
+    }
+
+    @include vp-767 {
+      padding: 40px 20px 120px;
+    }
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 350px));
+    column-gap: 90px;
+    max-width: 100%;
+
+    @include vp-1023 {
+      grid-template-columns: minmax(0, 280px) minmax(0, 280px);
+      column-gap: 60px;
+      row-gap: 40px;
+    }
+
+    @include vp-767 {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &--primary {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+
+      @include vp-1023 {
+        grid-column: 1;
+        grid-row: 1;
+        gap: 59px;
+      }
+
+      @include vp-767 {
+        gap: 40px;
+      }
+    }
+
+    &--secondary {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      @include vp-1023 {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: start;
+        gap: 55px;
+      }
+
+      @include vp-767 {
+        grid-column: auto;
+        grid-row: auto;
+        gap: 40px;
+      }
+    }
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+    color: $color-white-50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    @include vp-1023 {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.32px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $color-white;
+    }
+
+    &--small {
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0;
+      text-transform: none;
+
+      @include vp-1023 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      @include vp-767 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include vp-1023 {
+      grid-column: 1;
+      grid-row: 2;
+      margin-top: 40px;
+    }
+
+    @include vp-767 {
+      margin-top: 0;
+      gap: 10px;
+    }
+  }
+
+  &__label {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+    letter-spacing: 0.48px;
+    text-transform: uppercase;
+    color: $color-white-50;
+
+    @include vp-1023 {
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.32px;
+    }
+  }
+
+  &__sublink {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+    color: $color-white-50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    @include vp-1023 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $color-white;
+    }
+  }
+
+  &__socials {
+    position: absolute;
+    top: 50%;
+    right: clamp(20px, 10.42vw, 180px);
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transform: translateY(-50%);
+
+    @include vp-1023 {
+      top: 80px;
+      right: clamp(20px, 2.89vw, 50px);
+      gap: 50px;
+      transform: none;
+    }
+
+    @include vp-767 {
+      top: 40px;
+      right: 20px;
+      gap: 50px;
+    }
+  }
+
+  &__socials-item {
+    margin: 0;
+  }
+
+  &__socials-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: $color-white-50;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-white;
+    }
+  }
+
+  &__socials-icon {
+    display: block;
+    pointer-events: none;
+  }
+
+  &__cta {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    margin-top: 50px;
+    color: $color-white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+    @include vp-767 {
+      display: inline-flex;
+      margin-top: 30px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.7;
+    }
+  }
+
+  &__cta-text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+  }
+
+  &__cta-icon {
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+}

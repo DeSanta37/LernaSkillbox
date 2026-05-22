@@ -1,0 +1,43 @@
+.news {
+  padding: 0 0 80px;
+  overflow-x: clip;
+
+  @include vp-767 {
+    padding: 0 0 40px;
+  }
+
+  .container {
+    @include vp-767 {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 20px;
+      align-items: center;
+      border-bottom: 1px solid $color-gainsboro;
+    }
+  }
+
+  .filters {
+    @include vp-767 {
+      grid-column: 1;
+    }
+  }
+
+  .view-switch {
+    @include vp-767 {
+      grid-column: 2;
+    }
+  }
+
+  .news-list {
+    @include vp-767 {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .news-list--list .news-list__item:first-child {
+    @include vp-767 {
+      border-top: none;
+    }
+  }
+}
+ 

@@ -1,0 +1,159 @@
+.advantages {
+  padding: 80px 0;
+
+  &__text {
+    display: block;
+    margin: 0 0 16px;
+    font-size: 160px;
+    font-family: $ff-ardeco;
+    line-height: 140px;
+    color: $color-fun-blue;
+    letter-spacing: -0.02em;
+  }
+
+  &__heading {
+    margin: 0 0 80px;
+    font-size: 52px;
+    font-family: $ff-ardeco;
+    font-weight: 400;
+    line-height: 50px;
+    color: $color-fun-blue;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    column-gap: 325px;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: 315px 360px;
+
+    > * {
+      min-width: 0;
+    }
+  }
+
+  &__list {
+    row-gap: 36px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__list-item {
+    display: flex;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+  }
+
+  &__link--active {
+    color: $color-white-50;
+    cursor: default;
+
+    .advantages__link-icon {
+      display: none;
+    }
+  }
+
+  &__link-icon {
+    position: absolute;
+    right: -80px;
+    display: none;
+    pointer-events: none;
+  }
+
+  &__link:hover,
+  &__link:focus-visible {
+    color: $color-polo-blue;
+  }
+
+  a.advantages__link:hover .advantages__link-icon,
+  a.advantages__link:focus-visible .advantages__link-icon {
+    display: block;
+  }
+
+  &--inner-page {
+    padding-top: 64px;
+
+    @include vp-767 {
+      padding-top: 40px;
+    }
+  }
+
+  @include vp-1023 {
+    padding: 64px 0;
+
+    &__text {
+      font-size: 120px;
+      line-height: 100px;
+      letter-spacing: -0.02em;
+    }
+
+    &__heading {
+      margin-bottom: 56px;
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+    &__content {
+      grid-template-columns: 1fr 300px;
+      column-gap: 40px;
+    }
+  }
+
+  @include vp-767 {
+    padding: 48px 0;
+
+    &__text {
+      margin-bottom: 12px;
+      font-size: 66px;
+      line-height: 56px;
+      letter-spacing: -0.02em;
+    }
+
+    &__heading {
+      margin-bottom: 28px;
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    &__content {
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+      overflow-x: hidden;
+      padding-inline: 0;
+    }
+
+    &__list {
+      row-gap: 24px;
+      max-width: 100%;
+    }
+
+    &__link {
+      font-size: 18px;
+      line-height: 22px;
+      padding-right: 52px;
+    }
+
+    &__link-icon {
+      width: 48px;
+      right: 0;
+    }
+
+    &__list-item {
+      max-width: 100%;
+    }
+  }
+}
+

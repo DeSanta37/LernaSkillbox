@@ -1,0 +1,384 @@
+.header__menu:focus-visible,
+.header__logo-link:focus-visible,
+.info-banner__link:focus-visible,
+.team-card__link:focus-visible,
+.footer__nav-link:focus-visible,
+.footer__contacts-mail:focus-visible,
+.footer__contacts-tel:focus-visible,
+.socials__link:focus-visible {
+  outline: 2px solid #d6d2c4;
+  outline-offset: 2px;
+}
+
+.info-banner__link {
+  transition: background-color 0.2s ease;
+}
+
+.info-banner__link:hover {
+  background-color: #cdc8b6;
+}
+
+.footer__nav-link {
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.footer__nav-link:hover {
+  color: #d6d2c4;
+}
+
+.team-card {
+  border: 0;
+}
+
+.team-card__img {
+  height: 330px;
+  object-position: center top;
+}
+
+.team-card__link {
+  border: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.team-card__link:hover {
+  color: #d6d2c4;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.team-card__link--secondary {
+  transition: background-color 0.2s ease;
+}
+
+.team-card__link--secondary:hover {
+  background-color: #cdc8b6;
+  color: #1d252d;
+  text-decoration: none;
+}
+
+.socials__link {
+  transition: color 0.2s ease;
+}
+
+.socials__link:hover {
+  color: #d6d2c4;
+}
+
+.advantages {
+  border-right-color: rgba(29, 37, 45, 0.3);
+  border-left-color: rgba(29, 37, 45, 0.3);
+}
+
+.maintenance-page {
+  background-color: #ffffff;
+}
+
+.maintenance {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  padding: 195px 0 110px;
+}
+
+.maintenance .container {
+  position: static;
+  min-height: 100%;
+}
+
+.maintenance__content {
+  width: 100%;
+}
+
+.maintenance__title {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 36px;
+  text-align: center;
+  text-transform: none;
+}
+
+.maintenance__text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.socials--maintenance {
+  width: 288px;
+  margin: 60px auto 0;
+  justify-content: space-between;
+  align-self: auto;
+  gap: 0;
+}
+
+.socials--maintenance .socials__link {
+  color: #1d252d;
+}
+
+.socials--maintenance .socials__link:hover {
+  color: #d6d2c4;
+}
+
+.maintenance__contacts {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.maintenance__contact {
+  color: #1d252d;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.maintenance__contact:focus-visible {
+  outline: 2px solid #1d252d;
+  outline-offset: 2px;
+}
+
+@media (max-width: 1023px) {
+  .team-card {
+    min-height: 373px;
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .team-card__wrapper {
+    grid-template-columns: 220px 1fr;
+    gap: 20px;
+  }
+
+  .team-card__img {
+    width: 220px;
+    height: 240px;
+  }
+
+  .team-card__quote,
+  .team-card--center .team-card__quote {
+    margin-bottom: 14px;
+    text-align: left;
+  }
+
+  .team-card__description,
+  .team-card--center .team-card__description {
+    max-width: 300px;
+    margin: 0 0 20px auto;
+    text-align: right;
+  }
+
+  .team-card__links {
+    justify-content: flex-end;
+  }
+
+  .footer {
+    padding: 40px 0;
+  }
+
+  .footer__content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+  }
+
+  .footer__col-base {
+    width: 228px;
+    min-width: 228px;
+    gap: 18px;
+    justify-content: flex-start;
+  }
+
+  .footer__col-nav {
+    width: calc(100% - 258px);
+    justify-content: flex-start;
+    gap: 34px;
+  }
+
+  .socials {
+    width: 228px;
+    align-self: flex-start;
+    gap: 20px;
+  }
+
+  .footer__nav {
+    width: 100%;
+    gap: 30px;
+    margin: 0;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .footer__nav-list {
+    width: 220px;
+    max-width: 220px;
+    flex: 0 0 220px;
+  }
+
+  .footer__legal {
+    max-width: 470px;
+    margin: 0 0 0 auto;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .footer__contacts-mail,
+  .footer__nav-link {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .footer__contacts-tel {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  .footer__logo {
+    width: 105px;
+    height: 24px;
+  }
+
+  .info-banner {
+    align-items: center;
+  }
+
+  .info-banner__title {
+    text-align: center;
+  }
+
+  .info-banner__inner {
+    max-width: 520px;
+  }
+
+  .info-banner__text {
+    text-align: center;
+  }
+
+  .info-banner__link {
+    margin: 0 auto;
+  }
+
+  .maintenance {
+    min-height: calc(100vh - 60px);
+    padding-top: 166px;
+  }
+
+  .maintenance__title {
+    max-width: 528px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .maintenance__text {
+    max-width: 528px;
+  }
+
+  .socials--maintenance {
+    margin-top: 40px;
+  }
+
+  .maintenance__contacts {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .team-card {
+    min-height: 460px;
+    border-radius: 20px;
+  }
+
+  .team-card__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    gap: 0;
+  }
+
+  .team-card__inner {
+    flex: 1;
+  }
+
+  .team-card__img {
+    width: 120px;
+    height: 130px;
+    margin-bottom: 15px;
+  }
+
+  .team-card__quote,
+  .team-card--center .team-card__quote {
+    margin-bottom: 10px;
+    line-height: 18px;
+    text-align: left;
+  }
+
+  .team-card__description,
+  .team-card--center .team-card__description {
+    width: 240px;
+    max-width: 240px;
+    margin: 0 0 14px auto;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: right;
+  }
+
+  .team-card__links {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .team-card__link {
+    width: 140px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .maintenance {
+    min-height: calc(100vh - 60px);
+    padding-top: 157px;
+    padding-bottom: 50px;
+  }
+
+  .maintenance__title {
+    max-width: 295px;
+    margin-bottom: 20px;
+    font-size: 26px;
+    line-height: 24px;
+  }
+
+  .maintenance__text {
+    max-width: 295px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .socials--maintenance {
+    width: 248px;
+    margin-top: 40px;
+  }
+
+  .maintenance__contacts {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    justify-content: space-between;
+    width: 309px;
+    gap: 12px;
+  }
+
+  .maintenance__contact {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

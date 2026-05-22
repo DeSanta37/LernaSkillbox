@@ -1,0 +1,556 @@
+.silence {
+  &--intro-top {
+    padding: 48px 0 0;
+
+    @include vp-1023 {
+      padding: 40px 0 0;
+    }
+
+    @include vp-767 {
+      padding: 32px 0 0;
+    }
+  }
+
+  &__intro-columns {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    align-items: start;
+    column-gap: 220px;
+
+    @include vp-1023 {
+      grid-template-columns: 1fr;
+      row-gap: 24px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $ff-ardeco;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  &__title--hero {
+    font-size: 70px;
+    line-height: 70px;
+
+    @include vp-1023 {
+      font-size: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    @include vp-767 {
+      font-size: 44px;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+
+  &__intro-side {
+    margin: 0;
+    max-width: 420px;
+    font-size: 20px;
+    line-height: 26px;
+
+    @include vp-1023 {
+      max-width: 528px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+    }
+
+    @include vp-767 {
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  &__hero-wrap {
+    position: relative;
+    margin-top: 48px;
+
+    @include vp-1023 {
+      margin-top: 40px;
+    }
+
+    @include vp-767 {
+      margin-top: 32px;
+    }
+
+    &::after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(180deg, $color-cerulean-blue-0 0%, $color-cerulean-blue-60 46.28%, $color-cerulean-blue 89%);
+
+      @include vp-1023 {
+        height: 100px;
+      }
+
+      @include vp-767 {
+        height: 50px;
+      }
+    }
+  }
+
+  &__hero-img {
+    width: 100%;
+    min-height: 760px;
+    object-fit: cover;
+    object-position: center;
+
+    @include vp-1023 {
+      min-height: 400px;
+    }
+
+    @include vp-767 {
+      min-height: 200px;
+    }
+  }
+
+  &--lead {
+    padding: 80px 0 0;
+
+    @include vp-1023 {
+      padding: 56px 0 0;
+    }
+
+    @include vp-767 {
+      padding: 40px 0 0;
+    }
+  }
+
+  &__lead-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    @include vp-767 {
+      gap: 20px;
+    }
+  }
+
+  &__deco--center {
+    display: flex;
+    pointer-events: none;
+    width: 60px;
+
+    @include vp-1023 {
+      width: 50px;
+      height: 8px;
+    }
+  }
+
+  &__lead-text {
+    margin: 0;
+    max-width: 620px;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+
+    @include vp-767 {
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &--unique-build {
+    padding: 80px 0 0;
+
+    @include vp-1023 {
+      padding: 56px 0 0;
+    }
+
+    @include vp-767 {
+      padding: 48px 0 0;
+    }
+  }
+
+  &__two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    align-items: center;
+
+    > * {
+      min-width: 0;
+    }
+
+    @include vp-1023 {
+      grid-template-columns: 1fr;
+      row-gap: 32px;
+    }
+
+    &--unique {
+      .benefit {
+        justify-self: end;
+      }
+
+      @include vp-1023 {
+        .benefit {
+          justify-self: center;
+        }
+
+        .silence__media-img {
+          max-width: 420px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &--split {
+      margin-top: 80px;
+
+      @include vp-1023 {
+        margin-top: 56px;
+      }
+
+      @include vp-767 {
+        .silence__quiet-copy {
+          text-align: center;
+          max-width: 100%;
+        }
+
+        .silence__heading-ardeco,
+        .silence__body {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &--courtyard {
+      @include vp-1023 {
+        .silence__media-img {
+          max-width: 420px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  &__heading-ardeco {
+    margin: 0 0 24px;
+    font-family: $ff-ardeco;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 60px;
+    text-transform: uppercase;
+
+    &--sm {
+      font-size: 64px;
+      line-height: 60px;
+
+      @include vp-767 {
+        font-size: 36px;
+        line-height: 34px;
+      }
+    }
+
+    &--md {
+      margin-bottom: 16px;
+
+      @include vp-767 {
+        font-size: 36px;
+        line-height: 34px;
+      }
+    }
+
+    br {
+      @include vp-767 {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+    margin: 0 0 16px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include vp-767 {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__media-img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    justify-self: end;
+    object-fit: contain;
+    object-position: center;
+
+    @include vp-1023 {
+      justify-self: center;
+      max-width: 100%;
+    }
+
+    &--courtyard {
+      justify-self: start;
+    }
+  }
+
+  &--courtyard {
+    padding: 96px 0 0;
+
+    @include vp-1023 {
+      padding: 64px 0 0;
+    }
+
+    @include vp-767 {
+      padding: 48px 0 0;
+
+      .silence__two-col--courtyard {
+        justify-items: stretch;
+      }
+    }
+  }
+
+  &__courtyard-copy {
+    max-width: 420px;
+
+    @include vp-1023 {
+      max-width: 528px;
+      margin: 0 auto;
+    }
+
+    @include vp-767 {
+      max-width: 100%;
+      text-align: left;
+    }
+
+    .silence__heading-ardeco--sm {
+      margin-bottom: 16px;
+    }
+  }
+
+  &--panorama {
+    position: relative;
+    margin-top: 96px;
+
+    @include vp-1023 {
+      margin-top: 64px;
+    }
+
+    @include vp-767 {
+      margin-top: 48px;
+    }
+  }
+
+  &__panorama-img {
+    width: 100%;
+    min-height: 700px;
+    pointer-events: none;
+    object-fit: cover;
+    object-position: center;
+
+    @include vp-1023 {
+      min-height: 374px;
+    }
+
+    @include vp-767 {
+      min-height: 200px;
+    }
+  }
+
+  &__panorama-badge {
+    position: absolute;
+    left: 50%;
+    bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-50%);
+    pointer-events: none;
+
+    @include vp-1023 {
+      bottom: 64px;
+    }
+
+    @include vp-767 {
+      bottom: 40px;
+    }
+  }
+
+  &__panorama-num {
+    margin: 0 0 16px;
+    font-family: $ff-ardeco;
+    font-size: 80px;
+    line-height: 60px;
+    text-transform: uppercase;
+
+    @include vp-767 {
+      font-size: 56px;
+      line-height: 50px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__panorama-caption {
+    margin: 0 0 24px;
+    font-size: 22px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__panorama-curve {
+    display: flex;
+    width: 60px;
+    height: auto;
+    pointer-events: none;
+
+    @include vp-767 {
+      width: 50px;
+      height: 8px;
+    }
+  }
+
+  &--tech {
+    padding: 80px 0 0;
+
+    @include vp-1023 {
+      padding: 64px 0 0;
+    }
+
+    @include vp-767 {
+      padding: 48px 0 0;
+    }
+  }
+
+  &__tech-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 360px) minmax(0, 420px);
+    justify-content: space-between;
+    column-gap: clamp(40px, 8vw, 220px);
+    align-items: center;
+
+    > * {
+      min-width: 0;
+    }
+
+    @include vp-1023 {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+      justify-content: stretch;
+      column-gap: 0;
+    }
+
+    .silence__tech-photo {
+      @include vp-767 {
+        max-width: 260px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__photo-round {
+    border: 2px solid $color-white;
+    border-radius: 180px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  &__photo-round-img {
+    width: 100%;
+    display: block;
+    height: auto;
+    aspect-ratio: 360 / 480;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__dot-list {
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+
+    &--inline {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .silence__dot-item {
+        position: relative;
+        padding-left: 24px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 11px;
+          width: 4px;
+          height: 4px;
+          background-color: $color-white;
+          border-radius: 50%;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  &__dot-item {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+
+    @include vp-767 {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+
+  &__tech-copy .silence__heading-ardeco {
+    margin-bottom: 44px;
+
+    @include vp-767 {
+      margin-bottom: 24px;
+    }
+  }
+
+}
+
+// Figma tablet (768): privacy intro — две колонки вместо центрированного стека
+@media (max-width: $vp-tablet) and (min-width: $vp-tablet-min) {
+  .page-privacy .silence__intro-columns {
+    grid-template-columns: repeat(2, minmax(0, 340px));
+    justify-content: center;
+    align-items: start;
+    column-gap: 48px;
+    row-gap: 0;
+  }
+
+  .page-privacy .silence__intro-columns .silence__title--hero {
+    text-align: left;
+  }
+
+  .page-privacy .silence__intro-columns .silence__intro-side {
+    max-width: none;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+.benefit--adv-companion.benefit--square {
+  border-radius: 180px 180px 0 0;
+}
